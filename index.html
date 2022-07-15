@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottega Diner</title>
+</head>
+
+<body>
+    <h1>Bottega Diner</h1>
+
+    <h2>welcome</h2>
+
+    <script>
+        var menuList = [
+            "Breakfast",
+            " Side",
+            " Entree",
+            " Lunch Combo",
+            " Dinner"];
+
+        var sideMenu = {
+            number: "S1",
+            dish: "Egg Rolls",
+            price: 2.99,
+        }; 
+
+        var breakfastMenu =
+        {
+            number: "B1",
+            dish: "Mountain Omelette",
+            price: 9.99,
+        };
+
+
+        var entreeMenu =
+        {
+            number: "E1",
+            dish: "Pad Thai",
+            price: 12.99,
+        };
+
+        var lunchComboMenu =
+        {
+            number: "L1",
+            dish: "Pad Thai and Egg Rolls",
+            price: 9.99,
+        };
+
+        var dinnerMenu =
+        {
+            number: "D1",
+            dish: "Massaman",
+            price: 10.99,
+        };
+
+        var comments = ["That is a good pick!", "Your pick is our most popular!", "That is our chef's recommendation!", "We sold out everyday!", "I love that too!"];
+
+        function greetingCustomers() {
+            alert("Hi, welcome to Bottega Diner");
+        }
+
+        greetingCustomers();
+
+        var askForMenu = alert("Customers: Can I see the Menu, please?");
+
+        function introMenu() {
+            var giveMenu = alert("Server: Here are our menu:");
+
+            for (var i = 0; i < menuList.length; i++) {
+                alert(`${menuList[i]}`);
+            }
+        }
+
+        introMenu();
+
+        var sideList = alert(`Sides Menu : ${sideMenu.dish} ${sideMenu.price}`);
+
+        var breakfastsList = alert(`Breakfast Menu : ${breakfastMenu.dish} ${breakfastMenu.price} `);
+
+        var lunchList = alert(`Lunch Combos Menu : ${lunchComboMenu.dish} ${lunchComboMenu.price}`);
+
+        var dinnerList = alert(`Dinner Menu : ${dinnerMenu.dish} ${dinnerMenu.price}`);
+
+        var readyToOrder = alert("Customer: I'm ready to order.");
+
+        var pickOrder = prompt("What would you like to order?");
+        function takeOrder() {
+            if (pickOrder == sideMenu.dish || pickOrder == sideMenu.number) {
+                menuPrice = sideMenu.price;
+                return alert(`Your side is ${sideMenu.price} and ${comments[0]}`);
+
+            } else if (pickOrder == breakfastMenu.dish || pickOrder == breakfastMenu.number) {
+                menuPrice = breakfastMenu.price;
+                return alert(`Your breakfast is ${breakfastMenu.price} and ${comments[1]}`);
+
+            } else if (pickOrder == entreeMenu.dish || pickOrder == entreeMenu.number) {
+                menuPrice = entreeMenu.price;
+                return alert(`Your entree is ${entreeMenu.price} and ${comments[2]}`);
+
+            } else if (pickOrder == lunchComboMenu.dish || pickOrder == lunchComboMenu.number) {
+                menuPrice = lunchComboMenu.price;
+                return alert(`Your lunch is ${lunchComboMenu.price} and ${comments[3]}`);
+
+            } else if (pickOrder == dinnerMenu.dish || pickOrder == dinnerMenu.number) {
+                menuPrice = dinnerMenu.price;
+                return alert(`Your dinner is ${dinnerMenu.price} and ${comments[4]}`);
+            } else {
+                return prompt("Please add your order.")
+            }
+        }
+        takeOrder();
+
+        var moreOrder = prompt("What else would you like to order?");
+        function anotherOrder() {
+            if (moreOrder == sideMenu.dish || moreOrder == sideMenu.number) {
+                moreOrderPrice = sideMenu.price;
+                return alert(`Your side is ${menuPrice} and ${comments[0]}`);
+
+            } else if (moreOrder == breakfastMenu.dish || moreOrder == breakfastMenu.number) {
+                moreOrderPrice = breakfastMenu.price;
+                return alert(`Your breakfast is ${breakfastMenu.price} and ${comments[1]}`);
+
+            } else if (moreOrder == entreeMenu.dish || moreOrder == entreeMenu.number) {
+                moreOrderPrice = entreeMenu.price;
+                return alert(`Your entree is ${entreeMenu.price} and ${comments[2]}`);
+
+            } else if (moreOrder == lunchComboMenu.dish || moreOrder == lunchComboMenu.number) {
+                moreOrderPrice = lunchComboMenu.price;
+                return alert(`Your lunch combo is ${lunchComboMenu.price} and ${comments[3]}`);
+
+            } else if (moreOrder == dinnerMenu.dish || moreOrder == dinnerMenu.number) {
+                moreOrderPrice = dinnerMenu.price;
+                return alert(`Your dinner is ${dinnerMenu.price} and ${comments[4]}`);
+            } else {
+                return prompt("Please add your order.")
+            }
+        }
+        anotherOrder();
+
+        var yourMeals = alert(`Your order are ${pickOrder} and ${moreOrder}`);
+        var sumOrder = menuPrice + moreOrderPrice;
+        var totalOrder = alert(`Your total is $ ${sumOrder}`);       
+        var message = alert("Thank You!")
+
+    </script>
+
+</body>
+
+</html>
